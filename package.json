@@ -1,0 +1,75 @@
+{
+  "name": "change-root",
+  "displayName": "Change Root",
+  "description": "Change which folder VS Code treats as the workspace root, straight from the Explorer.",
+  "icon": "icon.png",
+  "publisher": "pauliusgin",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pauliusgin/change-root"
+  },
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "change-root.setSelectionAsRoot",
+        "title": "Change Root: Set Selected Directory as Root"
+      },
+      {
+        "command": "change-root.setParentAsRoot",
+        "title": "Change Root: Set Parent Directory as Root"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "change-root.setSelectionAsRoot",
+          "when": "explorerResourceIsFolder",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "change-root.setSelectionAsRoot",
+        "key": ".",
+        "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+      },
+      {
+        "command": "change-root.setParentAsRoot",
+        "key": "backspace",
+        "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.125.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
