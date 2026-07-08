@@ -38,6 +38,10 @@ Ships with these defaults, active while the Explorer tree is focused:
 
 ## Release Notes
 
+### 0.2.0
+
+Updated icon.
+
 ### 0.1.0
 
 Initial release: set a folder as the new workspace root from the Explorer, navigate up to the parent folder and default Explorer keybindings.

@@ -4,7 +4,7 @@
   "description": "Change which folder VS Code treats as the workspace root, straight from the Explorer.",
   "icon": "icon.png",
   "publisher": "pauliusgin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "repository": {
     "type": "git",
